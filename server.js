@@ -5,20 +5,22 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 const app = express();
-mongoose.connect('<your-mongodb-url>', {
+const dbUrl = process.env.MONGODB_URL; // Read the MongoDB URL from the environment variable
+
+mongoose
+  .connect(dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-    .then(() => console.log('Connected to MongoDB'))
-    .catch((error) => console.log(error));
-  
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((error) => console.log(error));
+
 const port = 5000;
 
 app.use(express.json());
 app.use(cors());
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
-
 
 // Add your routes and middleware here
 
