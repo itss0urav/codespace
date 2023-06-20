@@ -4,6 +4,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import About from "./components/about";
+import ContactUs from "./components/contact";
 import { AuthContext } from "./context/AuthContext"; // Update the import statement
 function App() {
   const { isAuthenticated } = useContext(AuthContext); // Access the isAuthenticated state
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<ContactUs />} />
       </Routes>
     </Router>
   );
