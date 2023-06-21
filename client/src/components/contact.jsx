@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Navbar from "./navbar";
 
 const ContactUs = () => {
@@ -8,17 +9,29 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-    setName("");
-    setEmail("");
-    setMessage("");
+
+    // Create an object with the form data
+    const formData = {
+      name,
+      email,
+      message,
+    };
+
+    // Make an HTTP POST request to the backend API
+    axios
+      .post("/api/feedback", formData)
+      .then((res) => {
+        console.log(res.data);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="container mx-auto p-4">
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <form onSubmit={handleSubmit}>
