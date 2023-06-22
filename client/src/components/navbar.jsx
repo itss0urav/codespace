@@ -10,8 +10,14 @@ const Navbar = () => {
     // Perform logout logic here...
     setIsAuthenticated(false);
     // Clear any user-related data from local storage or state
-    navigate("/login"); // Redirect to the login page or any other desired route
+
+    // Redirect to the login page or any other desired route
+    navigate("/login");
+    
+    // Clear login state from local storage
+    localStorage.removeItem("isLoggedIn");
   };
+
 
   return (
     <nav className="bg-gray-800">

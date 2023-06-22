@@ -12,8 +12,8 @@ function Home() {
             <h1 className="text-4xl font-bold text-white mb-4">
               Welcome to My Web Development Courses
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300">
+            <div className="flex flex-wrap justify-center">
+              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300 w-64 sm:w-72 md:w-80 mx-4 my-4">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png"
                   alt="HTML"
@@ -26,7 +26,7 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300">
+              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300 w-64 sm:w-72 md:w-80 mx-4 my-4">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/544px-CSS3_logo_and_wordmark.svg.png?20160530175649"
                   alt="CSS"
@@ -37,7 +37,7 @@ function Home() {
                   <p className="text-gray-600">Master CSS styling techniques</p>
                 </div>
               </div>
-              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300">
+              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300 w-64 sm:w-72 md:w-80 mx-4 my-4">
                 <img
                   src="https://learnbatta.com/assets/images/javascript/javascript-logo.png"
                   alt="JavaScript"
@@ -50,7 +50,7 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300">
+              <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300 w-64 sm:w-72 md:w-80 mx-4 my-4">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png?20220125121207"
                   alt="React"
