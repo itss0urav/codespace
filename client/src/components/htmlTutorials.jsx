@@ -1,16 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./navbar";
+import YouTube from "react-youtube";
 
 function HTMLTutorials() {
   const [videos, setVideos] = useState([]);
   const [videoUrl, setVideoUrl] = useState("");
 
-  const handleAddVideo = () => {
-    if (videoUrl) {
-      setVideos((prevVideos) => [...prevVideos, videoUrl]);
-      setVideoUrl("");
+  useEffect(() => {
+    fetchVideos();
+  }, []);
+
+  const fetchVideos = async () => {
+    try {
+      const response = await fetch("/api/videos");
+      const data = await response.json();
+      setVideos(data);
+    } catch (error) {
+      console.error("Failed to fetch videos", error);
     }
+  };
+
+  const handleAddVideo = async () => {
+    if (videoUrl) {
+      try {
+        const response = await fetch("/api/videos", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url: videoUrl }),
+        });
+
+        if (response.ok) {
+          setVideoUrl("");
+          fetchVideos();
+        } else {
+          console.error("Failed to add video");
+        }
+      } catch (error) {
+        console.error("Failed to add video", error);
+      }
+    }
+  };
+
+  const opts = {
+    height: "400",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+    },
   };
 
   return (
@@ -34,17 +73,12 @@ function HTMLTutorials() {
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {videos.map((video, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-4">
-              <iframe
-                title={`YouTube Video ${index + 1}`}
-                width="100%"
-                height="200"
-                src={video}
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
+          {videos.map((video) => (
+            <div
+              key={video._id}
+              className="bg-white rounded-lg shadow-lg p-4 transform transition duration-300 hover:scale-105"
+            >
+              <YouTube videoId={getVideoId(video.url)} opts={opts} />
             </div>
           ))}
         </div>
@@ -58,6 +92,19 @@ function HTMLTutorials() {
       </div>
     </div>
   );
+}
+
+// Helper function to extract YouTube video ID from the URL
+function getVideoId(url) {
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|\?v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+
+  if (match && match[2]) {
+    return match[2];
+  } else {
+    return url;
+  }
 }
 
 export default HTMLTutorials;
