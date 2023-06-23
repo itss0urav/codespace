@@ -4,7 +4,7 @@ import Navbar from "./navbar";
 const About = () => {
   return (
     <div className="bodyWrap">
-        <Navbar/>
+      <Navbar />
       <div className="flex flex-col items-center">
         <h1 className="text-center">
           <img

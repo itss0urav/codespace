@@ -24,7 +24,7 @@ function HTMLTutorials() {
   const handleAddVideo = async () => {
     if (videoUrl) {
       try {
-        const response = await fetch("/api/videos", {
+        const response = await fetch("api/videos", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
