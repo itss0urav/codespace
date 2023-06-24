@@ -3,7 +3,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated, username } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -27,6 +28,7 @@ const Navbar = () => {
               Codespace
             </Link>
           </div>
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <NavLink
@@ -53,14 +55,20 @@ const Navbar = () => {
               </NavLink>
             </div>
           </div>
+
           <div className="hidden md:block">
             {isAuthenticated ? (
-              <button
-                onClick={handleLogout}
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Logout
-              </button>
+              <>
+                <div className="flex items-center">
+                  <p className="text-gray-300 pr-3">{username}</p>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Logout
+                </button>
+              </>
             ) : (
               <Link
                 to="/login"
