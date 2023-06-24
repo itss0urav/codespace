@@ -26,38 +26,56 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-2xl mb-4">Register</h2>
-      {message && <p>{message}</p>}
-      <form className="mb-4" onSubmit={handleRegister}>
-        <input
-          className="border border-gray-400 rounded py-2 px-4 mb-2 w-64 sm:w-auto"
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          className="border border-gray-400 rounded py-2 px-4 mb-2 w-64 sm:w-auto"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          type="submit"
-        >
-          Register
-        </button>
-      </form>
-      <div className="text-center">
-        New here?
-        <Link to="/login">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
-            Login
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Register</h2>
+        {message && (
+          <p className="text-green-500 mb-4 text-center">{message}</p>
+        )}
+        <form onSubmit={handleRegister}>
+          <div className="mb-4">
+            <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
+              Username
+            </label>
+            <input
+              id="username"
+              className="border border-gray-300 rounded py-2 px-3 w-full"
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+              Password
+            </label>
+            <input
+              id="password"
+              className="border border-gray-300 rounded py-2 px-3 w-full"
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full"
+            type="submit"
+          >
+            Register
           </button>
-        </Link>
+        </form>
+        <div className="mt-4 text-center">
+          <p className="text-gray-600">
+            Already have an account?{" "}
+            <Link to="/login" className="text-blue-500 hover:text-blue-700">
+              Login
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
