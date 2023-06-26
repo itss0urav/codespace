@@ -10,12 +10,12 @@ function HTMLPage() {
   };
 
   return (
-    <div className="bodyWrap">
+    <div className="bg-gray-100 min-h-screen">
       <Navbar />
       <div className="container mx-auto py-10">
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center md:flex-row md:justify-center">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 md:mb-0 md:mr-4"
             onClick={handleFundamentalsClick}
           >
             Fundamentals
@@ -28,7 +28,7 @@ function HTMLPage() {
         </div>
 
         {showFundamentals && (
-          <>
+          <div className="mt-8">
             <h1 className="text-4xl font-bold mb-6">HTML Fundamentals</h1>
             <p className="text-lg mb-6">
               HTML is the standard markup language used for creating web pages.
@@ -36,38 +36,50 @@ function HTMLPage() {
               structure and content of a web document.
             </p>
             <p className="text-lg mb-6">
-              Here are some examples of HTML tags and attributes:
+              Here are some examples of HTML tags and containers:
             </p>
-            <ul className="list-disc ml-8 mb-6">
-              <li>
-                <code>&lt;a&gt;</code>: Creates a hyperlink. Attributes like
-                <code>href</code> specify the URL to link to.
-              </li>
-              <li>
-                <code>&lt;img&gt;</code>: Displays an image on the page.
-                Attributes like <code>src</code> and <code>alt</code> are used
-                to specify the image source and alternative text, respectively.
-              </li>
-              <li>
-                <code>&lt;table&gt;</code>: Defines a table. It contains rows
-                (<code>&lt;tr&gt;</code>) and cells (<code>&lt;td&gt;</code> or
-                <code>&lt;th&gt;</code>).
-              </li>
-              <li>
-                <code>&lt;form&gt;</code>: Creates an HTML form. Attributes like
-                <code>action</code> and <code>method</code> specify the form's
-                action URL and submission method.
-              </li>
-              <li>
-                <code>&lt;input&gt;</code>: Represents an input field in a form.
-                Attributes like <code>type</code> (e.g., text, checkbox, radio)
-                and <code>name</code> are used to define input types and names.
-              </li>
-              <li>
-                <code>&lt;button&gt;</code>: Defines a clickable button.
-              </li>
-            </ul>
-          </>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <h2 className="text-xl font-bold mb-2">Container Tags:</h2>
+                <ul className="list-disc ml-4">
+                  <li>
+                    <code>&lt;div&gt;</code>: Represents a generic container
+                    used to group other HTML elements.
+                  </li>
+                  <li>
+                    <code>&lt;span&gt;</code>: Defines a generic inline
+                    container.
+                  </li>
+                  <li>
+                    <code>&lt;section&gt;</code>: Represents a standalone
+                    section of a document.
+                  </li>
+                  <li>
+                    <code>&lt;article&gt;</code>: Represents a self-contained
+                    composition in a document.
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-md">
+                <h2 className="text-xl font-bold mb-2">Text Formatting:</h2>
+                <ul className="list-disc ml-4">
+                  <li>
+                    <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: Headings
+                    of different levels.
+                  </li>
+                  <li>
+                    <code>&lt;p&gt;</code>: Defines a paragraph.
+                  </li>
+                  <li>
+                    <code>&lt;em&gt;</code>: Emphasizes text.
+                  </li>
+                  <li>
+                    <code>&lt;strong&gt;</code>: Indicates strong importance.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
