@@ -9,6 +9,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -22,6 +23,7 @@ const Login = () => {
     e.preventDefault();
 
     setIsLoggingIn(true);
+    setError(""); // Clear any previous error message
 
     try {
       const response = await axios.post(
@@ -42,6 +44,7 @@ const Login = () => {
       navigate("/"); // Redirect to the home page
     } catch (error) {
       console.error("Login failed:", error);
+      setError("Incorrect username or password. Please try again.");
       setIsLoggingIn(false);
     }
   };
@@ -51,6 +54,9 @@ const Login = () => {
       <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-6">Login</h2>
         <form onSubmit={handleLogin}>
+          {error && (
+            <div className="text-red-500 text-center mb-4">{error}</div>
+          )}
           <div className="mb-4">
             <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
               Username
