@@ -7,8 +7,9 @@ import About from "./components/about";
 import ContactUs from "./components/contact";
 import { AuthContext } from "./context/AuthContext"; // Update the import statement
 import Html from "./components/html";
-import Css from "./components/css";
 import HTMLTutorials from "./components/htmlTutorials";
+import Css from "./components/css";
+import CssTutorials from "./components/cssTutorials";
 function App() {
   const { isAuthenticated } = useContext(AuthContext); // Access the isAuthenticated state
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/html" element={<Html />} />
         <Route exact path="/htmltutorials" element={<HTMLTutorials />} />
         <Route exact path="/css" element={<Css />} />
+        <Route exact path="/csstutorials" element={<CssTutorials />} />
       </Routes>
     </Router>
   );
