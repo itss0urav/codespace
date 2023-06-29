@@ -107,9 +107,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`md:hidden ${showMenu ? "block" : "hidden"}`}
-        >
+        <div className={`md:hidden ${showMenu ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <NavLink
               exact

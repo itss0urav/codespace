@@ -58,7 +58,10 @@ const Login = () => {
             <div className="text-red-500 text-center mb-4">{error}</div>
           )}
           <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
+            <label
+              htmlFor="username"
+              className="block text-gray-700 font-medium mb-2"
+            >
               Username
             </label>
             <input
@@ -72,7 +75,10 @@ const Login = () => {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 font-medium mb-2"
+            >
               Password
             </label>
             <input

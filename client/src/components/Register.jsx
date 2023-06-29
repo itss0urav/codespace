@@ -34,7 +34,10 @@ const Register = () => {
         )}
         <form onSubmit={handleRegister}>
           <div className="mb-4">
-            <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
+            <label
+              htmlFor="username"
+              className="block text-gray-700 font-medium mb-2"
+            >
               Username
             </label>
             <input
@@ -48,7 +51,10 @@ const Register = () => {
             />
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 font-medium mb-2"
+            >
               Password
             </label>
             <input
