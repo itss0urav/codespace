@@ -26,9 +26,11 @@ app.use(cors());
 const authRoutes = require("./routes/auth");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const videoRoutes = require("./routes/videos");
+const videoRoutesCss = require("./routes/cssvideos");
 app.use("/api/auth", authRoutes);
 app.use("/api/feedback", feedbackRoutes);
 app.use("/api/videos", videoRoutes);
+app.use("/api/cssvideos", videoRoutesCss);
 
 // Add your routes and middleware here
 app.use(bodyParser.urlencoded({ extended: true }));

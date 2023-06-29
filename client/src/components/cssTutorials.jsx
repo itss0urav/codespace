@@ -13,7 +13,7 @@ function CssTutorials() {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/videos");
+      const response = await fetch("http://localhost:5000/api/cssvideos");
       const data = await response.json();
       setVideos(data);
     } catch (error) {
@@ -24,7 +24,7 @@ function CssTutorials() {
   const handleAddVideo = async () => {
     if (videoUrl) {
       try {
-        const response = await fetch("http://localhost:5000/api/videos", {
+        const response = await fetch("http://localhost:5000/api/cssvideos", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
