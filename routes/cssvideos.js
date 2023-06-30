@@ -3,12 +3,12 @@ const router = express.Router();
 const cssVideos = require('../models/cssVideos');
 
 // Route to save a CSS video
-router.post('/cssvideos', (req, res) => {
+router.post('/cssVideos', (req, res) => {
   // Your code to save the CSS video
 });
 
 // Route to get all CSS videos
-router.get('/cssvideos', (req, res) => {
+router.get('/cssVideos', (req, res) => {
   // Your code to retrieve CSS videos
 });
 
