@@ -26,7 +26,7 @@ app.use(cors());
 const authRoutes = require("./routes/auth");
 const feedbackRoutes = require("./routes/feedbackRoutes");
 const videoRoutes = require("./routes/videos");
-const cssVideos = require("./routes/cssVideos");
+const cssVideos = require("./routes/cssvideos");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/feedback", feedbackRoutes);
