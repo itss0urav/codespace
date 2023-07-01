@@ -11,6 +11,7 @@ import HTMLTutorials from "./components/htmlTutorials";
 import Css from "./components/css";
 import CssTutorials from "./components/cssTutorials";
 import Javascript from "./components/javascript";
+import ReactPage from "./components/reactPage";
 
 function App() {
   const { isAuthenticated } = useContext(AuthContext); // Access the isAuthenticated state
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/css" element={<Css />} />
         <Route exact path="/csstutorials" element={<CssTutorials />} />
         <Route exact path="/javascript" element={<Javascript />} />
+        <Route exact path="/reactPage" element={<ReactPage />} />
       </Routes>
     </Router>
   );

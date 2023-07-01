@@ -60,7 +60,7 @@ function Home() {
                 </Link>
               </div>
               <div className="card bg-white rounded-lg shadow-lg p-4 transform hover:scale-105 transition duration-300 w-64 sm:w-72 md:w-80 mx-4 my-4">
-                <Link to="/react">
+                <Link to="/reactPage">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png?20220125121207"
                     alt="React"
