@@ -93,7 +93,7 @@ const About = () => {
             <div class="mt-4 space-y-2">
               <a
                 href="https://www.instagram.com/itssourav.dev/"
-                class="inline-block px-4 py-2 bg-pink-500 text-white font-bold rounded hover:bg-pink-600"
+                class="inline-block mx-2 px-4 py-2 bg-pink-500 text-white font-bold rounded hover:bg-pink-600"
               >
                 <img
                   src="https://img.shields.io/badge/-Instagram-E4405F?style=flat-square&logo=Instagram&logoColor=white"
@@ -104,7 +104,7 @@ const About = () => {
               </a>
               <a
                 href="https://www.linkedin.com/in/itssourav/"
-                class="inline-block px-4 py-2 bg-blue-600 text-white font-bold rounded hover:bg-blue-700"
+                class="inline-block mx-2 px-4 py-2 bg-blue-600 text-white font-bold rounded hover:bg-blue-700"
               >
                 <img
                   src="https://img.shields.io/badge/-LinkedIn-2867B2?style=flat-square&logo=linkedin&logoColor=white"
@@ -115,7 +115,7 @@ const About = () => {
               </a>
               <a
                 href="https://github.com/itss0urav"
-                class="inline-block px-4 py-2 bg-gray-800 text-white font-bold rounded hover:bg-gray-900"
+                class="inline-block mx-2 px-4 py-2 bg-gray-800 text-white font-bold rounded hover:bg-gray-900"
               >
                 <img
                   src="https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white"
