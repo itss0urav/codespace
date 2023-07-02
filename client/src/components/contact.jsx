@@ -19,7 +19,7 @@ const ContactUs = () => {
 
     // Make an HTTP POST request to the backend API
     axios
-      .post("/api/feedback", formData)
+      .post("http://localhost:5000/api/feedback", formData)
       .then((res) => {
         console.log(res.data);
         setName("");
