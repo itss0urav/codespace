@@ -6,6 +6,8 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,8 +27,14 @@ const ContactUs = () => {
         setName("");
         setEmail("");
         setMessage("");
+        setSuccessMessage("Data submitted successfully!");
+        setErrorMessage("");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setSuccessMessage("");
+        setErrorMessage("Error: Please try again.");
+      });
   };
 
   return (
@@ -34,6 +42,10 @@ const ContactUs = () => {
       <Navbar />
       <div className="container mx-auto p-4">
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+        {successMessage && (
+          <div className="text-gray-700 mb-4">{successMessage}</div>
+        )}
+        {errorMessage && <div className="text-red-600 mb-4">{errorMessage}</div>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block font-bold mb-1">
