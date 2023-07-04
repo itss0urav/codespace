@@ -112,7 +112,7 @@ const Navbar = () => {
             <NavLink
               exact
               to="/"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               activeClassName="bg-gray-900 text-white"
             >
               Home
@@ -136,7 +136,7 @@ const Navbar = () => {
                 <p className="text-gray-300">{username}</p>
                 <button
                   onClick={handleLogout}
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
+                  className=" border text-red-600 hover:bg-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium"
                 >
                   Logout
                 </button>
