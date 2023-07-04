@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import community from './community';
 
 const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated, username } =
@@ -69,7 +70,15 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               activeClassName="bg-gray-900 text-white"
             >
-              Home
+              Courses
+            </NavLink>
+            <NavLink
+              exact
+              to="/community"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              activeClassName="bg-gray-900 text-white"
+            >
+              Community
             </NavLink>
             <NavLink
               to="/about"
@@ -115,7 +124,15 @@ const Navbar = () => {
               className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               activeClassName="bg-gray-900 text-white"
             >
-              Home
+              Courses
+            </NavLink>
+            <NavLink
+              exact
+              to="/community"
+              className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              activeClassName="bg-gray-900 text-white"
+            >
+              Community
             </NavLink>
             <NavLink
               to="/about"
@@ -136,7 +153,7 @@ const Navbar = () => {
                 <p className="text-gray-300">{username}</p>
                 <button
                   onClick={handleLogout}
-                  className=" border text-red-600 hover:bg-gray-700 hover:text-red-500 px-3 py-2 rounded-md text-base font-medium"
+                  className=" border text-red-600 hover:bg-gray-700 hover:text-red-500 px-3 py-1 mt-2 rounded-md text-base font-medium"
                 >
                   Logout
                 </button>
