@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import community from './community';
+import community from "./community";
 
 const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated, username } =

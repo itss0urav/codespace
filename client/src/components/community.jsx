@@ -5,7 +5,6 @@ function community() {
   return (
     <div>
       <Navbar />
-      
     </div>
   );
 }
