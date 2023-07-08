@@ -9,10 +9,14 @@ const App = () => {
     <>
       <Navbar />
       <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-white to-blue-900">
-        <h1 className="text-4xl font-bold text-white mb-6 text-center">
+        <h1
+          className="text-4xl font-bold text-white mb-6 text-center"
+          style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
+        >
           Donate for a Cause
         </h1>
-        <div className="text-center max-w-md px-6 py-4 bg-white rounded-lg shadow-lg space-y-4">
+
+        <div className="text-center max-w-md px-6 py-9 bg-white rounded-lg shadow-lg space-y-4">
           <p className="text-lg text-gray-800">
             Your generous donation can make a real difference. Scan the QR code
             below to donate:
