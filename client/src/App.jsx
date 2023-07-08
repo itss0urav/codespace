@@ -13,6 +13,8 @@ import ReactPage from "./components/reactPage";
 import Community from "./components/community";
 import Register from "./components/Register";
 import ContactUs from "./components/contact";
+import Updates from "./components/updates";
+import Threads from "./components/threads";
 import Donate from "./components/donate";
 import Login from "./components/Login";
 import About from "./components/about";
@@ -37,6 +39,8 @@ function App() {
         <Route exact path="/community" element={<Community />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/contact" element={<ContactUs />} />
+        <Route exact path="/threads" element={<Threads />} />
+        <Route exact path="/updates" element={<Updates />} />
         <Route exact path="/Donate" element={<Donate />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/about" element={<About />} />
