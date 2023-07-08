@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import community from "./community";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faSignOutAlt, faBars, faBook, faUsers, faInfoCircle, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const { isAuthenticated, setIsAuthenticated, username } =
-    useContext(AuthContext);
+  const { isAuthenticated, setIsAuthenticated, username } = useContext(AuthContext);
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -41,24 +41,7 @@ const Navbar = () => {
               className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
               onClick={toggleMenu}
             >
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  className={showMenu ? "hidden" : ""}
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M3 5h18v1H3V5zm0 7h18v-1H3v1zm0 4h18v-1H3v1z"
-                />
-                <path
-                  className={showMenu ? "" : "hidden"}
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M4 6h16v1H4V6zm0 5h16v1H4v1zm0 5h16v1H4v1z"
-                />
-              </svg>
+              <FontAwesomeIcon icon={faBars} className="text-gray-300 hover:text-white focus:outline-none focus:text-white" />
             </button>
           </div>
 
@@ -70,6 +53,7 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faBook} className="mr-2" />
               Courses
             </NavLink>
             <NavLink
@@ -78,6 +62,7 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faUsers} className="mr-2" />
               Community
             </NavLink>
             <NavLink
@@ -85,6 +70,7 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faInfoCircle} className="mr-2" />
               About Us
             </NavLink>
             <NavLink
@@ -92,6 +78,7 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faPhone} className="mr-2" />
               Contact Us
             </NavLink>
             {isAuthenticated ? (
@@ -101,6 +88,7 @@ const Navbar = () => {
                   onClick={handleLogout}
                   className="text-red-500 hover:bg-gray-700 hover:text-red-300 px-3 py-2 rounded-md text-sm font-medium"
                 >
+                  <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                   Logout
                 </button>
               </div>
@@ -109,6 +97,7 @@ const Navbar = () => {
                 to="/login"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
+                <FontAwesomeIcon icon={faUser} className="mr-2" />
                 Login
               </Link>
             )}
@@ -124,6 +113,7 @@ const Navbar = () => {
               className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faBook} className="mr-2" />
               Courses
             </NavLink>
             <NavLink
@@ -132,6 +122,7 @@ const Navbar = () => {
               className=" text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faUsers} className="mr-2" />
               Community
             </NavLink>
             <NavLink
@@ -139,6 +130,7 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faInfoCircle} className="mr-2" />
               About Us
             </NavLink>
             <NavLink
@@ -146,6 +138,7 @@ const Navbar = () => {
               className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               activeClassName="bg-gray-900 text-white"
             >
+              <FontAwesomeIcon icon={faPhone} className="mr-2" />
               Contact Us
             </NavLink>
             {isAuthenticated ? (
@@ -155,6 +148,7 @@ const Navbar = () => {
                   onClick={handleLogout}
                   className=" border text-red-600 hover:bg-gray-700 hover:text-red-500 px-3 py-1 mt-2 rounded-md text-base font-medium"
                 >
+                  <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                   Logout
                 </button>
               </div>
@@ -163,6 +157,7 @@ const Navbar = () => {
                 to="/login"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium"
               >
+                <FontAwesomeIcon icon={faUser} className="mr-2" />
                 Login
               </Link>
             )}
